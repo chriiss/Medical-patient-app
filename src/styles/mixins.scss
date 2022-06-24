@@ -1,0 +1,383 @@
+@use "./variables.scss" as variables;
+
+@mixin globalStyle() {
+    @font-face {
+        font-family: myFirstFont;
+        src: url("./assets/font//AvenirNextCyr-Demi.woff");
+    }
+    * {
+        list-style: none;
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+        font-family: myFirstFont;
+    }
+    h4 {
+        color: variables.$seventh-color;
+        padding-bottom: 16px;
+        padding-left: 2.5%;
+        vertical-align: middle;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+
+    .icon-not-mobile {
+        @media(max-width: variables.$breakpoint-tablet) {
+            display: none;
+        }
+    }
+    .margin-space-header {
+        margin-left: variables.$space - 11px;
+
+        @media (max-width: variables.$breakpoint-tablet) {
+            margin-left: variables.$space;
+        }
+    }
+}
+
+@mixin nightMode {
+    .activeNight {
+        background-color: variables.$nightMode;
+        color: variables.$fourth-color;
+        transition: all .75s ease-in-out;
+        -webkit-transition: all .75s ease-in-out;
+        -moz-transition: all .75s ease-in-out;
+        -ms-transition: all .75s ease-in-out;
+        -o-transition: all .75s ease-in-out;
+    }
+}
+
+@mixin toggleStyle {
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        margin-left:variables.$space;
+        margin-bottom: variables.$space;
+        vertical-align:super;
+        float:right;
+        margin-right: 16px;
+    }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: variables.$nightMode;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: variables.$sixth-color;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    input:checked + .slider {
+        background-color: variables.$fourth-color;
+    }
+    input:focus + .slider {
+        box-shadow: 0 0 1px variables.$sixth-color;
+    }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    .slider.round {
+        border-radius: 34px;
+    }
+    .slider.round:before {
+        border-radius: 50%;
+    }
+}
+
+
+
+@mixin borderStyle {
+    border-bottom: 3px solid variables.$secondary-color;
+    padding-bottom: 12px;
+
+    @media(max-width: 768px) {
+        padding-bottom: 5px;
+    }
+}
+
+@mixin borderStyleBis {
+    border: 2px solid #D5D7DE;
+    box-shadow: 0px 1px 2px rgba(19, 34, 57, 0.12), inset 0px 1px 3px rgba(19, 34, 57, 0.08);
+    border-radius: 8px;
+}
+
+@mixin textTransformStyle {
+    .text-transform {
+        text-transform: uppercase;
+    }
+}
+
+@mixin flexStyle() {
+    .d-flex {
+        display: flex;
+        @media(max-width: variables.$breakpoint-tablet) {
+            flex-direction: column;
+        }
+    }
+}
+
+@mixin fColumnStyle() {
+    .f-column {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@mixin jContentStyle() {
+    .j-content {
+        justify-content: center;
+    }
+}
+
+@mixin navbarStyle {
+    .navbar {
+        border-bottom: 2px solid variables.$fourth-color;
+        padding-bottom: 5px;
+        margin-bottom: variables.$space;
+        font-size: variables.$font-size;
+        &-img {
+            margin-left: 19px;
+        }
+        &-list {
+            &-li {
+                padding: variables.$twelvePx 16px variables.$twelvePx 16px;
+
+                @media (max-width: variables.$breakpoint-tablet) {
+                    margin-left: 17.77px;
+                }
+                a {
+                    color: variables.$primary-color;
+
+                    &:hover {
+                        color: variables.$secondary-color;
+                        transition:all .75s ease-in-out;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+
+        &-profile {
+            flex:0.98;
+            padding-top: 8px;
+            width: 34px;
+            height: 34px;
+            img {
+                float: right;
+
+                @media(max-width: variables.$breakpoint-tablet) {
+                    float: left;
+                    margin-left: variables.$space;
+                }
+            }
+        }
+
+        .active {
+            @include borderStyle;
+            color: variables.$secondary-color;
+        }
+        .exact-active-link {
+            @include borderStyle;
+            color: variables.$secondary-color;
+        }
+    }
+
+    .tabs {
+        padding-bottom: 5px*2;
+    }
+}
+
+@mixin homeHeaderStyle {
+    .patient-container  {
+        &-children {
+            flex: 0.23;
+        }
+
+        &-children:nth-child(2) {
+            padding-top: variables.$space;
+            flex: 0.55;
+
+            .search {
+                width: 100%;
+                padding: 0px 12px 0px 50px;
+                height: 40px;
+                outline: none;
+                @include borderStyleBis;
+                @media (max-width: variables.$breakpoint-tablet) {
+                    width: 90%;
+                }
+            }
+
+            input.search {
+                background: transparent url(variables.$search-icon) no-repeat 13px center;
+            }
+
+            input.search::placeholder {
+                padding-left: 1px;
+            }
+
+            .btn {
+                background: none;
+                border: none;
+                margin-left: 0.5rem;
+                font-weight: bold;
+                color: variables.$third-color;
+                display: none;
+            }
+        }
+
+        .filter-color {
+            padding-left: 4px;
+            padding-bottom: 2px;
+
+            li {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            li:nth-child(odd) {
+                color: variables.$sixth-color;
+            }
+
+            .mark {
+                background-color: #EEEEF0;
+            }
+        }
+
+        .margin-space {
+            margin-top: 4px;
+        }
+
+        .text-space {
+            margin-left: 8px;
+            margin-top: variables.$twelvePx;
+            color: variables.$primary-color;
+            font-size: variables.$twelvePx;
+        }
+
+        .text-space-bis {
+            font-size: 18px;
+            margin-top: 14px;
+            color: variables.$primary-color;
+        }
+
+        .text-space-breakpoint {
+            @media (max-width: variables.$breakpoint-tablet) {
+                margin-left:0;
+            }
+        }
+
+        .text-light {
+            font-size: variables.$twelvePx;
+            color: variables.$fiveth-color;
+        }
+    }
+}
+
+
+@mixin homeTableStyle {
+    .table {
+        display: block;
+        margin: auto;
+        width: 95%;
+        @include borderStyleBis;
+
+        &-head, select {
+            color: variables.$sixth-color;
+        }
+
+        &-head, &-body {
+            padding-top: 11px;
+            padding-bottom: 16px;
+        }
+
+
+        &-head {
+            div {
+                flex: 0.14;
+            }
+
+            select {
+                border: none;
+                outline: none;
+            }
+            .space {
+                padding-left: 5px;
+            }
+        }
+
+        &-body {
+
+            div {
+                flex: 0.14;
+                padding-left: 0px;
+            }
+        }
+
+        &-middle {
+            margin-top:2.5px;
+        }
+    }
+
+    .text-color, .text-color-two {
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    .text-color {
+        color: variables.$seventh-color;
+    }
+
+    .text-color-two {
+        color: variables.$heighth-color;
+    }
+
+    .btn-plus {
+        @include borderStyleBis;
+    }
+}
+
+@mixin detailsStyle {
+    .container-details {
+        margin-top: variables.$space*4;
+        .table {
+            &-head, &-body {
+                padding-left: 0.2rem;
+            }
+            &-body {
+                background-color: #F3F5F9;
+            }
+        }
+        .apercu-details {
+            padding: variables.$space;
+            .top-space {
+                margin-top: variables.$space;
+            }
+        }
+    }
+}

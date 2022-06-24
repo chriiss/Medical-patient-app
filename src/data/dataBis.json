@@ -1,0 +1,85 @@
+{
+    "patient": "Patients",
+    "born": "Née le",
+    "death": "Décès le",
+    "ipp": "ipp",
+    "search": "Rechercher",
+    "doc": "Documents trouvés",
+    "tronc": "...",
+    "date": "Date",
+    "type": "Type",
+    "origin": "Origine",
+    "apercu": "Aperçu",
+    "valueOne": "1",
+    "valueTwo": "2",
+    "valueThree": "3",
+    "valueFour": "4",
+    "valueFive": "5",
+    "valueSix": "6",
+    "valueSeven": "7",
+    "valueHeight": "8",
+    "recent": "Recent to Odd",
+    "odd": "Odd to Recent",
+    "alphabetZtoA": "Z to A",
+    "alphabetAtoZ": "A to Z",
+    "to": "à",
+    "years": "ans",
+
+    "imgComponent": [
+        {
+            "name": "codoclogo",
+            "link": "/public/logo-codoc.png"
+        }
+    ],
+    "navbarComponent": [
+        {
+            "name": "Recherche",
+            "link": "/"
+        },
+        {
+            "name": "Cohortes",
+            "link": "/Cohortes"
+        },
+        {
+            "name": "Export",
+            "link": "/Export"
+        },
+        {
+            "name": "Admin",
+            "link": "/Admin"
+        }
+
+    ],
+    "profileComponent": [
+        {
+            "name": "codocprofil",
+            "link": "/public/profil.png"
+        }
+    ],
+    "tabsComponent": [
+        {
+            "name": "Documents",
+            "link": "/"
+        },
+        {
+            "name": "Biologie",
+            "link": "/Biologie"
+        },
+        {
+            "name": "Mouvements",
+            "link": "/Mouvements"
+        },
+        {
+            "name": "Séjours",
+            "link": "/Sejours"
+        },
+        {
+            "name": "Phénotypes",
+            "link": "/Phenotypes"
+        },
+        {
+            "name": "Cohortes",
+            "link": "/Cohortes"
+        }
+    ]
+}
