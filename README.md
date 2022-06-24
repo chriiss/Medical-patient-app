@@ -1,14 +1,26 @@
 # test-tech
 
-This template should help get you started developing with Vue 3 in Vite.
+The objective of the following technical test is to develop an application to access information from the Electronic Patient Record.
 
-## Recommended IDE Setup
+Functionalities included :
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- day / night mode with a slide toggle
+- the age at which the patient died
+- search bar with auto completion and cross button to clear his search
+- sorting by date: from the most recent to the oldest and from the oldest to the most recent
+- sorting of types by alphabetical order (A to Z and Z to A)
+- sort origins alphabetically (A to Z and Z to A)
+- sort overviews alphabetically (A to Z and Z to A)
+- suppression of html json tags
+- truncated text that requires clicking on the "+" button to learn more, and that redirects to another page 
 
-## Customize configuration
+Integration of the site :
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- responsive design (site that adapts to desktop, tablet and mobile formats) 
+- hover animation
+- use of SCSS processor (no css framework used for this project)
+
+Translated with www.DeepL.com/Translator (free version)
 
 ## Project Setup
 
