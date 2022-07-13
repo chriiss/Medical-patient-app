@@ -1,5 +1,3 @@
-# test-tech
-
 The objective of the following technical test is to develop an application to access information from the Electronic Patient Record.
 
 Functionalities included :
